@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrase {{ numero_phrase }}</title>
+    <style>
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: normal;
+            width: auto;
+            max-width: 1600px;
+            word-wrap: break-word;
+            pointer-events: none;
+        }
+
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+        }
+
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #333 transparent;
+        }
+
+        .colored-word {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phrase {{ numero_phrase }}</h1>
+
+    <p><strong>Phrase latine (Cliquable) :</strong></p>
+    <p>{{ phrase | safe }}</p>
+
+    <p><strong>Phrase latine (Colorée avec infobulles) :</strong></p>
+    <p class="phrase">
+        {{ phrase_coloree | safe }}
+    </p>
+
+    <p><strong>Traduction :</strong></p>
+    <p>{{ traduction }}</p>
+
+    <!-- Boutons de navigation -->
+    <div>
+        {% if numero_phrase > 1 %}
+            <a href="/phrase/{{ numero_phrase - 1 }}">Précédent</a>
+        {% endif %}
+        {% if numero_phrase < total_phrases %}
+            <a href="/phrase/{{ numero_phrase + 1 }}">Suivant</a>
+        {% endif %}
+    </div>
+<!-- Retour vers la liste des phrases du groupe -->
+    <a href="/groupe/1">Retour au groupe</a>
+
+    <script>
+        document.querySelectorAll('.tooltip-container').forEach(container => {
+            container.addEventListener('mouseover', function (event) {
+                const tooltip = this.querySelector('.tooltip');
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                // Ajuster si l'infobulle dépasse à gauche
+                if (tooltipRect.left < 0) {
+                    tooltip.style.left = '0';
+                    tooltip.style.transform = 'none';
+                }
+
+                // Ajuster si l'infobulle dépasse à droite
+                if (tooltipRect.right > windowWidth) {
+                    tooltip.style.left = 'auto';
+                    tooltip.style.right = '0';
+                    tooltip.style.transform = 'none';
+                }
+
+                // Ajuster si l'infobulle dépasse en haut
+                if (tooltipRect.top < 0) {
+                    tooltip.style.top = 'auto';
+                    tooltip.style.bottom = '100%';
+                    tooltip.querySelector('::after').style.borderColor = '#333 transparent transparent transparent';
+                }
+
+                // Ajuster si l'infobulle dépasse en bas
+                if (tooltipRect.bottom > windowHeight) {
+                    tooltip.style.top = 'auto';
+                    tooltip.style.bottom = '100%';
+                    tooltip.querySelector('::after').style.top = 'auto';
+                    tooltip.querySelector('::after').style.bottom = '-5px';
+                    tooltip.querySelector('::after').style.borderColor = 'transparent transparent #333 transparent';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

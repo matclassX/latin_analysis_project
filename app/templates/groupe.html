@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ groupe['titre'] }}</title>
+</head>
+<body>
+    <h1>{{ groupe['titre'] }}</h1>
+    <p><strong>Idée principale:</strong> {{ groupe['idee_principale'] }}</p>
+
+    <h2>Phrases du groupe :</h2>
+    <ul>
+        {% for i, phrase in enumerate(phrases_groupe, start=groupe['debut_phrase']) %}
+            <li><a href="/phrase/{{ i }}">{{ phrase[:50] }}...</a></li>
+        {% endfor %}
+    </ul>
+
+    <!-- Bouton pour retourner à la liste des groupes -->
+    <a href="/groupes">Retour à la liste des groupes</a>
+
+    <!-- Navigation entre les groupes -->
+    <div>
+        {% if groupe['groupe'] > 1 %}
+            <a href="/groupe/{{ groupe['groupe'] - 1 }}">Groupe précédent</a>
+        {% endif %}
+        {% if groupe['groupe'] < total_groupes %}
+            <a href="/groupe/{{ groupe['groupe'] + 1 }}">Groupe suivant</a>
+        {% endif %}
+    </div>
+</body>
+</html>

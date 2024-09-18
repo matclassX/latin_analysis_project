@@ -1,0 +1,82 @@
+{
+    "groupes": [
+      {
+        "groupe": 1,
+        "debut_phrase": 1,
+        "fin_phrase": 9,
+        "titre": "Incapacité humaine à discerner le véritable bien",
+        "idee_principale": "L'homme est incapable de distinguer ce qui est réellement bon pour lui, souvent aveuglé par l'illusion et les désirs malavisés."
+      },
+      {
+        "groupe": 2,
+        "debut_phrase": 10,
+        "fin_phrase": 17,
+        "titre": "Démocrite et la sagesse du rire",
+        "idee_principale": "La sagesse consiste à rire des absurdités de la vie humaine, comme le faisait Démocrite."
+      },
+      {
+        "groupe": 3,
+        "debut_phrase": 18,
+        "fin_phrase": 50,
+        "titre": "Séjan et la chute des puissants",
+        "idee_principale": "L'exemple de Séjan montre comment les ambitions politiques excessives mènent à une chute brutale."
+      },
+      {
+        "groupe": 4,
+        "debut_phrase": 51,
+        "fin_phrase": 57,
+        "titre": "Les dangers de l'éloquence",
+        "idee_principale": "L'éloquence, tout comme la richesse ou le pouvoir, peut être dangereuse et conduire à la ruine."
+      },
+      {
+        "groupe": 5,
+        "debut_phrase": 58,
+        "fin_phrase": 72,
+        "titre": "La gloire militaire et ses illusions",
+        "idee_principale": "La gloire militaire est vaine, car même les plus grands conquérants finissent par tomber dans l'oubli ou la déchéance."
+      },
+      {
+        "groupe": 6,
+        "debut_phrase": 73,
+        "fin_phrase": 80,
+        "titre": "Alexandre et les limites de la conquête",
+        "idee_principale": "Même Alexandre le Grand, malgré toutes ses conquêtes, n'a pu échapper à la réalité de la mort."
+      },
+      {
+        "groupe": 7,
+        "debut_phrase": 81,
+        "fin_phrase": 101,
+        "titre": "Les malheurs de la vieillesse",
+        "idee_principale": "La vieillesse est une accumulation de souffrances physiques et mentales, qu'il est insensé de désirer."
+      },
+      {
+        "groupe": 8,
+        "debut_phrase": 102,
+        "fin_phrase": 113,
+        "titre": "Les douleurs émotionnelles de la vieillesse",
+        "idee_principale": "La vieillesse entraîne également des souffrances émotionnelles, telles que la perte des proches."
+      },
+      {
+        "groupe": 9,
+        "debut_phrase": 114,
+        "fin_phrase": 119,
+        "titre": "L'exemple des héros déchus",
+        "idee_principale": "Même les plus grands héros de l'histoire, tels que Pompée, finissent souvent de manière tragique."
+      },
+      {
+        "groupe": 10,
+        "debut_phrase": 120,
+        "fin_phrase": 147,
+        "titre": "Les dangers de la beauté",
+        "idee_principale": "La beauté, surtout chez les jeunes hommes, est souvent source de grands dangers."
+      },
+      {
+        "groupe": 11,
+        "debut_phrase": 148,
+        "fin_phrase": 156,
+        "titre": "La prière pour un esprit sain dans un corps sain",
+        "idee_principale": "Plutôt que de désirer des biens matériels, il faut prier pour un esprit sain et une âme en paix."
+      }
+    ]
+  }
+  

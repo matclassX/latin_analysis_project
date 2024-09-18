@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des phrases</title>
+</head>
+<body>
+    <h1>Liste des phrases</h1>
+    <ul>
+        {% for numero, extrait in extraits %}
+            <li><a href="/phrase/{{ numero }}">Phrase {{ numero }} : {{ extrait }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
